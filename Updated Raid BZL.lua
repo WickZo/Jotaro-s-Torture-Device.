@@ -41,7 +41,7 @@ local Workspace = game:GetService("Workspace")
 
 -- ===== CONFIG =====
 local SPECIFIC_TARGET_NAME = nil -- e.g., ".Jotaro KujoABC123"
-local DISCORD_WEBHOOK = "" -- PUT YOUR DISCORD WEBHOOK INSIDE THE DOUBLE APOSTROPHE
+local DISCORD_WEBHOOK = getgenv().WEBHOOK_URL
 
 -- ===== HELPERS =====
 local function sendDiscordMessage(msg)
@@ -266,3 +266,4 @@ autoQuickPlay()
 task.wait(2)
 
 sendDiscordMessage("✅ Script fully loaded and running!")
+
