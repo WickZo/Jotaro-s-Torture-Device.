@@ -18,7 +18,12 @@ if currentPlaceId ~= ALLOWED_PLACE_ID then
 end
 
 print("✅ Correct Place ID detected! Loading script...")
-
+game:GetService("StarterGui"):SetCore("SendNotification",{
+	Title = "Nigger script active", -- Required
+	Text = "Notification Description", -- Required
+	Icon = "rbxassetid://11706065137", -- Optional
+    Duration = 12
+})
 -- ===== INITIAL 10 SECOND WAIT =====
 print("🔴 Script loaded - Waiting 10 seconds before initializing...")
 task.wait(10)
@@ -373,3 +378,4 @@ autoQuickPlay()
 task.wait(2)
 
 sendDiscordMessage("✅ Script fully loaded and running!")
+
