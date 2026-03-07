@@ -20,7 +20,7 @@ end
 print("✅ Correct Place ID detected! Loading script...")
 game:GetService("StarterGui"):SetCore("SendNotification",{
 	Title = "Nigger script active", -- Required
-	Text = "Notification Description", -- Required
+	Text = "Aura", -- Required
 	Icon = "rbxassetid://11706065137", -- Optional
     Duration = 12
 })
@@ -378,4 +378,5 @@ autoQuickPlay()
 task.wait(2)
 
 sendDiscordMessage("✅ Script fully loaded and running!")
+
 
