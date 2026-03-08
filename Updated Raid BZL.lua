@@ -339,32 +339,21 @@ if LocalPlayer.Character then
     startFollowing()
 end
 
--- ===== AUTO SUMMON STAND =====
+-- ===== SUMMON STAND ONCE =====
 task.spawn(function()
-
-    while true do
-
-        task.wait(0.5)
-
-        local liveChar = getLiveCharacter()
-
-        if liveChar and LocalPlayer.Character then
-
-            if not liveChar:FindFirstChild("Stand_Weapon") then
-
-                local controller = LocalPlayer.Character:FindFirstChild("client_character_controller")
-
-                if controller then
-                    controller.SummonStand:FireServer()
-                    sendDiscordMessage("⭐ Stand summoned")
-                end
-
-            end
-
-        end
-
+    -- Wait for character to be ready
+    local character = LocalPlayer.Character or LocalPlayer.CharacterAdded:Wait()
+    
+    -- Wait a moment for everything to load
+    task.wait(2)
+    
+    -- Find and fire the remote
+    local controller = character:FindFirstChild("client_character_controller")
+    if controller and controller:FindFirstChild("SummonStand") then
+        controller.SummonStand:FireServer()
+        sendDiscordMessage("⭐ Stand summoned once")
+        print("✅ Stand summon fired")
     end
-
 end)
 
 -- ===== INITIAL EXECUTION =====
@@ -373,6 +362,7 @@ autoQuickPlay()
 task.wait(2)
 
 sendDiscordMessage("✅ Script fully loaded and running!")
+
 
 
 
